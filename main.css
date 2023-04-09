@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Harry P", Poppins, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: darkslategray;
+    color: white;
+}
+
+.quizQuestion1, .quizQuestion2, .quizQuestion3, .quizQuestion4, .quizQuestion5, .quizResult{
+    display: none;
+    font-family: "Harry P", Poppins, serif;
+}
+
+.quizIntro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizTitle-Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logoChoipeau{
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    margin-left: -90px;
+    background: blueviolet;
+}
