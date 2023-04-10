@@ -76,24 +76,6 @@ function FinalResult() {
         <button class="btn" onclick="location.reload()">Recommencer</button>
         `
 }
-const stars = document.querySelectorAll('.star');
-
-// Création de l'animation
-const revele = gsap.timeline({
-    defaults: {
-        duration: 1,
-        ease: 'power2.inOut',
-    }
-});
-
-// Animation de la question
-revele.to(question1, { opacity: 1, height: 'auto' });
-
-// Animation de la réponse
-revele.to(answerBtnGryffondor1, { opacity: 1, y: 0 });
-
-// Animation des étoiles
-revele.staggerTo(stars, 0.5, { opacity: 1 }, 0.1, '-=0.5');
 /* -------------------------------------- Quiz Question 1 -------------------------------------- */
 
 answerBtnPoufsouffle1.addEventListener('click', ()=>{
