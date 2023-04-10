@@ -43,16 +43,23 @@ let Gryffondor = 0
 let Serpentard = 0
 let Poufsouffle = 0
 let Serdaigle = 0
-/*
-URL_PoufsouffleEmblem.src = "img/PoufsouffleEmblem.png";
-URL_SerdaigleEmblem.src = "img/SerdaigleEmblem.png";
-URL_SerpentardEmblem.src = "img/SerpentardEmblem.png";
-URL_GryffondorEmblem.src = "img/Emblem_Gryffindor.png";
-let resultEmblem = document.querySelector(".img");
-let GryffondorEmblem = document.querySelector(".img");
-let SerpentardEmblem = document.querySelector("img");
-let PoufsouffleEmblem = document.querySelector("img");
-let SerdaigleEmblem = document.querySelector("img");*/
+
+// Créer une variable pour stocker l'élément que vous voulez animer
+const btn = document.querySelectorAll('.btn');
+// Créer une timeline pour la séquence d'animation
+const tl = gsap.timeline({ repeat: -1 });
+
+// Ajouter une animation pour faire léviter l'élément
+tl.to(btn, {
+    y: '-=20',
+    duration: 1,
+    ease: 'power1.inOut'
+}).to(btn, {
+    y: '+=20',
+    duration: 1,
+    ease: 'power1.inOut'
+});
+
 
 function FinalResult() {
     let Ecoles = [Poufsouffle, Serdaigle, Serpentard, Gryffondor]
@@ -69,7 +76,24 @@ function FinalResult() {
         <button class="btn" onclick="location.reload()">Recommencer</button>
         `
 }
+const stars = document.querySelectorAll('.star');
 
+// Création de l'animation
+const revele = gsap.timeline({
+    defaults: {
+        duration: 1,
+        ease: 'power2.inOut',
+    }
+});
+
+// Animation de la question
+revele.to(question1, { opacity: 1, height: 'auto' });
+
+// Animation de la réponse
+revele.to(answerBtnGryffondor1, { opacity: 1, y: 0 });
+
+// Animation des étoiles
+revele.staggerTo(stars, 0.5, { opacity: 1 }, 0.1, '-=0.5');
 /* -------------------------------------- Quiz Question 1 -------------------------------------- */
 
 answerBtnPoufsouffle1.addEventListener('click', ()=>{
@@ -208,5 +232,6 @@ answerBtnGryffondor5.addEventListener('click', ()=>{
     quizResult.style.display = "flex";
     FinalResult()
 } )
+
 
 

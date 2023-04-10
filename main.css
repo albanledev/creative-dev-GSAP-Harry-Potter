@@ -113,3 +113,17 @@ body {
 .EmblemResult{
     width: 300px;
 }
+/*-------------------------------------------*/
+.stars-container {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background-color: #FFC107;
+    border-radius: 50%;
+    opacity: 0;
+}
