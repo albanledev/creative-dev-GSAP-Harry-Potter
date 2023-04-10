@@ -2,7 +2,7 @@
 
 
 !!!
-Pour une meilleure expérience, veuillez télécharger cette police: https://www.dafont.com/fr/harry-p.font
+#Pour une meilleure expérience, veuillez télécharger cette police: https://www.dafont.com/fr/harry-p.font
 !!!
 
 Dans ce projet, nous utilisons la bibliothèque GSAP pour créer des animations en utilisant les couleurs et les éléments du monde de Harry Potter. L'idée principale est de proposer un test pour déterminer la maison de chacun en fonction de ses réponses.
