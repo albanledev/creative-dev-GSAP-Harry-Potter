@@ -1,17 +1,8 @@
-const video = document.querySelector('#ma-video');
-video.playbackRate = 0.1;
+// Créer une nouvelle TimelineMax
+var tl = new TimelineMax({ repeat: -1, repeatDelay: 5 });
 
+// Ajouter l'animation de mouvement du bloc rouge
+tl.to(".block", 2.5, { x: "120vw", ease: Power0.easeNone });
 
-gsap.to(".circle",{
-    y:300,
-    backgroundColor:"red",
-    duration:2,
-    ease:"bounce",
-    onUpdated : () => {
-        document.querySelector('.container').setAttribute("src", "https://www.youtube.com/embed/7wtfhZwyrcc?autoplay=1")
-    }
-})
-  
-
-
-
+// Démarrer l'animation
+tl.play();
