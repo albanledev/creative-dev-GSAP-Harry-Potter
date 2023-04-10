@@ -56,8 +56,8 @@ function leviterBoutons() {
 
 function faireTomberBoutons() {
     gsap.to(".btn", {
-        duration: 1,
-        y: 500,
+        duration: 0.8,
+        y: 600,
         ease: "power4.in"
     });
 }
