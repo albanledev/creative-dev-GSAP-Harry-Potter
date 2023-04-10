@@ -63,10 +63,10 @@ function FinalResult() {
     let EmblemResult = Emblem[EcolesResult]
     console.log(nomResult)
     quizResult.innerHTML = `
-        <h2>Vous irez a ...</h2>
-        <p class="quizHouse">${nomResult}</p>
+        <h2 class="TitleResult">Vous irez a ...</h2>
         <img src="${EmblemResult}" alt="EmblemResult" class="EmblemResult">
-        <button onclick="location.reload()">Reload</button>
+        <p class="NameResult">${nomResult}</p>
+        <button class="btn" onclick="location.reload()">Recommencer</button>
         `
 }
 
@@ -184,28 +184,28 @@ answerBtnPoufsouffle5.addEventListener('click', ()=>{
     Poufsouffle += 2
     console.log("Poufsouffle: "+Poufsouffle)
     quizQuestion5.style.display = "none";
-    quizResult.style.display = "block";
+    quizResult.style.display = "flex";
     FinalResult()
 } )
 answerBtnSerdaigle5.addEventListener('click', ()=>{
     Serdaigle += 2
     console.log("Serdaigle: " + Serdaigle)
     quizQuestion5.style.display = "none";
-    quizResult.style.display = "block";
+    quizResult.style.display = "flex";
     FinalResult()
 } )
 answerBtnSerpentard5.addEventListener('click', ()=>{
     Serpentard += 2
     console.log("Serpentard: " + Serpentard)
     quizQuestion5.style.display = "none";
-    quizResult.style.display = "block";
+    quizResult.style.display = "flex";
     FinalResult()
 } )
 answerBtnGryffondor5.addEventListener('click', ()=>{
     Gryffondor += 2
     console.log("Gryffondor: " + Gryffondor)
     quizQuestion5.style.display = "none";
-    quizResult.style.display = "block";
+    quizResult.style.display = "flex";
     FinalResult()
 } )
 
