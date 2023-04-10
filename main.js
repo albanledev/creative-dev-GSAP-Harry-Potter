@@ -44,21 +44,30 @@ let Serpentard = 0
 let Poufsouffle = 0
 let Serdaigle = 0
 
-// Créer une variable pour stocker l'élément que vous voulez animer
-const btn = document.querySelectorAll('.btn');
-// Créer une timeline pour la séquence d'animation
-const tl = gsap.timeline({ repeat: -1 });
+function leviterBoutons() {
+    gsap.to(".btn", {
+        duration: 1,
+        y: -20,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut"
+    });
+}
 
-// Ajouter une animation pour faire léviter l'élément
-tl.to(btn, {
-    y: '-=20',
-    duration: 1,
-    ease: 'power1.inOut'
-}).to(btn, {
-    y: '+=20',
-    duration: 1,
-    ease: 'power1.inOut'
-});
+function faireTomberBoutons() {
+    gsap.to(".btn", {
+        duration: 1,
+        y: 500,
+        ease: "power4.in"
+    });
+}
+
+let btn = document.querySelectorAll(".btn");
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", faireTomberBoutons);
+}
+
+leviterBoutons();
 
 
 function FinalResult() {
