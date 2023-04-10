@@ -10,24 +10,36 @@ body {
   background: #f1f1f1;
 }
 
-h1 {
-  color: red;
-  animation: ralentir 2s infinite;
+html {
+  overflow-x: hidden;
 }
 
-.circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background: blue;
-  margin: 0 auto;
-  margin-top: 100px;
+.h1 {
+  color: rgb(255, 200, 0);
+  animation: ralentir 2s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  height: 100vh;
+  font-size: 5em;
+}
+
+.h1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 200, 0);
+  animation: ralentir 2s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  height: 100vh;
+  font-size: 5em;
 }
 
 #video-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50vw, -50vh);
   z-index: 1;
   font-size: 5rem;
@@ -59,5 +71,17 @@ video {
     transform: scale(0.5);
   }
 }
+.container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
 
-/*# sourceMappingURL=style.css.map */
+.block {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40%; /* positionne le bloc au centre de l'élément parent */
+  /* positionne le bloc au centre de l'élément parent */
+  transform: translateX(-25px) scale(0.5, 0.5); /* recentre le bloc sur son propre axe horizontal */
+}/*# sourceMappingURL=style.css.map */
