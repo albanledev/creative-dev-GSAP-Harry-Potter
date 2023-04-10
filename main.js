@@ -50,21 +50,35 @@ function leviterBoutons() {
         y: -20,
         repeat: -1,
         yoyo: true,
-        ease: "power2.inOut"
+        ease: "power2.inOut",
+
     });
 }
 
 function faireTomberBoutons() {
     gsap.to(".btn", {
-        duration: 0.8,
+        duration: 0.3,
         y: 600,
-        ease: "power4.in"
+        ease: "power1.in",
+    });
+}
+function rendreVisibleBoutons() {
+    gsap.from(".btn", {
+        duration: 0.2,
+        ease: "power4.in",
+        opacity: 0,
+    });
+    gsap.to(".btn", {
+        ease: "power4.in",
+        opacity: 1,
     });
 }
 
 let btn = document.querySelectorAll(".btn");
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", faireTomberBoutons);
+    btn[i].addEventListener("click", rendreVisibleBoutons);
+
 }
 
 leviterBoutons();
