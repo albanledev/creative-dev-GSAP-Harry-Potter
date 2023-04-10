@@ -83,6 +83,12 @@ body {
     border-radius: 10px;
     font-size: 22px;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    font-size: 28px;
+    transform: scale(1.2);
+    height: 90px;
 
 }
 /*-------------------------------------------*/
@@ -112,4 +118,18 @@ body {
 }
 .EmblemResult{
     width: 300px;
+}
+/*-------------------------------------------*/
+.stars-container {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background-color: #FFC107;
+    border-radius: 50%;
+    opacity: 0;
 }

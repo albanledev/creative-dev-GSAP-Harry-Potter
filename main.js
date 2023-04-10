@@ -43,16 +43,32 @@ let Gryffondor = 0
 let Serpentard = 0
 let Poufsouffle = 0
 let Serdaigle = 0
-/*
-URL_PoufsouffleEmblem.src = "img/PoufsouffleEmblem.png";
-URL_SerdaigleEmblem.src = "img/SerdaigleEmblem.png";
-URL_SerpentardEmblem.src = "img/SerpentardEmblem.png";
-URL_GryffondorEmblem.src = "img/Emblem_Gryffindor.png";
-let resultEmblem = document.querySelector(".img");
-let GryffondorEmblem = document.querySelector(".img");
-let SerpentardEmblem = document.querySelector("img");
-let PoufsouffleEmblem = document.querySelector("img");
-let SerdaigleEmblem = document.querySelector("img");*/
+
+function leviterBoutons() {
+    gsap.to(".btn", {
+        duration: 1,
+        y: -20,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut"
+    });
+}
+
+function faireTomberBoutons() {
+    gsap.to(".btn", {
+        duration: 1,
+        y: 500,
+        ease: "power4.in"
+    });
+}
+
+let btn = document.querySelectorAll(".btn");
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", faireTomberBoutons);
+}
+
+leviterBoutons();
+
 
 function FinalResult() {
     let Ecoles = [Poufsouffle, Serdaigle, Serpentard, Gryffondor]
@@ -69,7 +85,6 @@ function FinalResult() {
         <button class="btn" onclick="location.reload()">Recommencer</button>
         `
 }
-
 /* -------------------------------------- Quiz Question 1 -------------------------------------- */
 
 answerBtnPoufsouffle1.addEventListener('click', ()=>{
@@ -208,5 +223,6 @@ answerBtnGryffondor5.addEventListener('click', ()=>{
     quizResult.style.display = "flex";
     FinalResult()
 } )
+
 
 
