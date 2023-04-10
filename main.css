@@ -17,6 +17,17 @@ body {
 .quizQuestion1, .quizQuestion2, .quizQuestion3, .quizQuestion4, .quizQuestion5, .quizResult{
     display: none;
     font-family: "Harry P", Poppins, serif;
+    background-color: blue;
+    width: 700px;
+}
+
+.Choixpeau{
+    display: none;
+    width: 600px;
+    z-index: -2;
+    margin-top: -0px;
+    margin-right: -50px;
+    background-color: darkred;
 }
 
 .quizIntro{
@@ -28,13 +39,50 @@ body {
 
 .quizTitle-Image{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 10px black;
 }
-.logoChoipeau{
+.logoChoipeau {
     width: 200px;
     height: 200px;
     z-index: -1;
-    margin-left: -90px;
-    background: blueviolet;
+    margin-bottom: -90px;
+    margin-right:  -370px;
+
+}
+.quizStart{
+    margin-top: 100px;
+    width: 50%;
+    height: 50px;
+    background-color:  #253452;
+    color: white;
+    border: black;
+    border-radius: 10px;
+}
+
+.question1, .question2, .question3, .question4, .question5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.answerBox{
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+.answerbtn{
+    width: 40%;
+    height: 50px;
+    background-color:  #253452;
+    color: white;
+    border: black;
+    border-radius: 10px;
 }

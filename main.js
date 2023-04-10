@@ -30,10 +30,12 @@ let answerBtnGryffondor5 = document.querySelector(".Gryffondor5")
 
 let quizStart = document.querySelector(".quizStart")
 let quizIntro = document.querySelector(".quizIntro")
+let Choixpeau = document.querySelector(".Choixpeau")
 quizStart.addEventListener('click', ()=>{
     console.log("start")
     quizIntro.style.display = "none";
     quizQuestion1.style.display = "block";
+    Choixpeau.style.display = "block";
 } )
 
 let quizResult = document.querySelector(".quizResult")
@@ -41,43 +43,55 @@ let Gryffondor = 0
 let Serpentard = 0
 let Poufsouffle = 0
 let Serdaigle = 0
+/*
+URL_PoufsouffleEmblem.src = "img/PoufsouffleEmblem.png";
+URL_SerdaigleEmblem.src = "img/SerdaigleEmblem.png";
+URL_SerpentardEmblem.src = "img/SerpentardEmblem.png";
+URL_GryffondorEmblem.src = "img/Emblem_Gryffindor.png";
+let resultEmblem = document.querySelector(".img");
+let GryffondorEmblem = document.querySelector(".img");
+let SerpentardEmblem = document.querySelector("img");
+let PoufsouffleEmblem = document.querySelector("img");
+let SerdaigleEmblem = document.querySelector("img");*/
 
-function FinalResult(){
+function FinalResult() {
     let Ecoles = [Poufsouffle, Serdaigle, Serpentard, Gryffondor]
-    let EcolesPos = Ecoles.indexOf(Math.max(...Ecoles));
+    let EcolesResult = Ecoles.indexOf(Math.max(...Ecoles));
     let nom = ["Poufsouffle", "Serdaigle", "Serpentard", "Gryffondor"]
-    let nomPos = nom[EcolesPos]
-    console.log(nomPos)
-    quizResult.innerHTML =  `
-        <h2>Vous irez à ...</h2>
-        <p class="quizHouse">${nomPos}</p>
+    let Emblem = ["img/Emblem_Hufflepuff.png", "img/Emblem_Ravenclaw.png", "img/Emblem_Slytherin.png", "img/Emblem_Gryffindor.png"]
+    let nomResult = nom[EcolesResult]
+    let EmblemResult = Emblem[EcolesResult]
+    console.log(nomResult)
+    quizResult.innerHTML = `
+        <h2>Vous irez a ...</h2>
+        <p class="quizHouse">${nomResult}</p>
+        <img src="${EmblemResult}" alt="EmblemResult" class="EmblemResult">
         <button onclick="location.reload()">Reload</button>
         `
 }
 
-
 /* -------------------------------------- Quiz Question 1 -------------------------------------- */
 
 answerBtnPoufsouffle1.addEventListener('click', ()=>{
-    Poufsouffle++
+    Poufsouffle += 2
     console.log("Poufsouffle: "+Poufsouffle)
     quizQuestion1.style.display = "none";
     quizQuestion2.style.display = "block";
 } )
 answerBtnSerdaigle1.addEventListener('click', ()=>{
-    Serdaigle++
+    Serdaigle += 2
     console.log("Serdaigle: " + Serdaigle)
     quizQuestion1.style.display = "none";
     quizQuestion2.style.display = "block";
 } )
 answerBtnSerpentard1.addEventListener('click', ()=>{
-    Serpentard++
+    Serpentard += 2
     console.log("Serpentard: " + Serpentard)
     quizQuestion1.style.display = "none";
     quizQuestion2.style.display = "block";
 } )
 answerBtnGryffondor1.addEventListener('click', ()=>{
-    Gryffondor++
+    Gryffondor += 2
     console.log("Gryffondor: " + Gryffondor)
     quizQuestion1.style.display = "none";
     quizQuestion2.style.display = "block";
@@ -86,25 +100,25 @@ answerBtnGryffondor1.addEventListener('click', ()=>{
 /* -------------------------------------- Quiz Question 2 -------------------------------------- */
 
 answerBtnPoufsouffle2.addEventListener('click', ()=>{
-    Poufsouffle += 2
+    Poufsouffle++
     console.log("Poufsouffle: "+ Poufsouffle)
     quizQuestion2.style.display = "none";
     quizQuestion3.style.display = "block";
 } )
 answerBtnSerdaigle2.addEventListener('click', ()=>{
-    Serdaigle += 2
+    Serdaigle++
     console.log("Serdaigle: " + Serdaigle)
     quizQuestion2.style.display = "none";
     quizQuestion3.style.display = "block";
 } )
 answerBtnSerpentard2.addEventListener('click', ()=>{
-    Serpentard += 2
+    Serpentard++
     console.log("Serpentard: " + Serpentard)
     quizQuestion2.style.display = "none";
     quizQuestion3.style.display = "block";
 } )
 answerBtnGryffondor2.addEventListener('click', ()=>{
-    Gryffondor += 2
+    Gryffondor++
     console.log("Gryffondor: " + Gryffondor)
     quizQuestion2.style.display = "none";
     quizQuestion3.style.display = "block";
