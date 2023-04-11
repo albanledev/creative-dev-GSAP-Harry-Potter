@@ -96,8 +96,76 @@ function FinalResult() {
         <h2 class="TitleResult">Vous irez a ...</h2>
         <img src="${EmblemResult}" alt="EmblemResult" class="EmblemResult">
         <p class="NameResult">${nomResult}</p>
-        <button class="btn" onclick="location.reload()">Recommencer</button>
+        <button class="btn reload" onclick="location.reload()">Recommencer</button>
         `
+    gsap.from(".quizResult", {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "expo.out",
+    });
+    gsap.from(".TitleResult", {
+        duration: 3,
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "expo.out",
+
+    });
+    gsap.from(".EmblemResult", {
+        duration: 3,
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power4.out",
+    });
+
+    gsap.from(".NameResult", {
+        duration: 3,
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power4.out",
+    });
+    gsap.from(".reload", {
+        duration: 7,
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power4.out",
+    });
+    const duration = 15 * 1000,
+        animationEnd = Date.now() + duration,
+        defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        // since particles fall down, start a bit higher than random
+        confetti(
+            Object.assign({}, defaults, {
+                particleCount,
+                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+            })
+        );
+        confetti(
+            Object.assign({}, defaults, {
+                particleCount,
+                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+            })
+        );
+    }, 250);
 }
 /* -------------------------------------- Quiz Question 1 -------------------------------------- */
 
